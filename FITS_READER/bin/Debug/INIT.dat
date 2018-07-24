@@ -1,0 +1,37 @@
+**********************************************************************
+*** INITIALIZATION FILE HERMES/MERCATOR SPECTRA REDUCTION PIPELINE ***
+**********************************************************************
+***
+*** FILES SELECTION 
+DIR_MAIN		D:\PIPLINE-HERMES\HD1976_HERMES_raw\main		    / main directory (ensure that the path dont contain space simbols!)
+DIR_BIAS 		D:\PIPLINE-HERMES\HD1976_HERMES_raw			/ bias images direcrory (ensure that the path don't contain space simbols!)
+DIR_FLAT 		D:\PIPLINE-HERMES\HD1976_HERMES_raw			/ flat images directory (ensure that the path don't contain space simbols!)
+DIR_CLBR 		D:\PIPLINE-HERMES\HD1976_HERMES_raw			/ calibration images directory (ensure that the path don't contain space simbols!)
+DIR_OBJ 		D:\PIPLINE-HERMES\HD1976_HERMES_raw		/ object images directory (ensure that the path don't contain space simbols!)
+FMASK_BIAS 		*BIAS.fits                    			/ bias files mask
+FMASK_FLAT 		*HRF_FF.fits								/ flat files mask
+FMASK_CLBR 		*HRF_TH.fits								/ calibration files mask
+FMASK_OBJ  		*HRF_OBJ.fits							/ object files mask
+*** TRIMMING
+TRIM_ON			YES										/ Trim images? (YES/NO)
+TRIM_STR1		1
+TRIM_COL1		58
+TRIM_STR2		4600
+TRIM_COL2		2099
+*** ORDER TRACING
+ORD_DEG			3										/ polynom order for approximation of orders positions [INT]
+*** BACKGROUND
+BKG_MODE		0										/ background subtraction mode (0 -- simple; 1 -- 2D polynomial fit)
+BKG_SW			50										/ the wing for filtration window [INT]
+BKG_OO			7										/ polynomial degree perpendicular to dispersion axis [INT]
+BKG_OX			8										/ polynomial degree along dispersion axis [INT]
+BKG_STEP		100										/ step along dispersion axis used in mode 1 [INT]
+*** EXTRACTION
+APER_WING		9										/ aperture wing [INT] (-1 for form minima to minima)
+*** WAVELENGTH CALIBRATION
+WAVE_OO			9										/ polinom order perpendicular orders [INT]
+WAVE_OX			11										/ polinom order along orders [INT]
+WAVE_NINER		5										/ number of rejection iterations [INT]
+WAVE_REJ		3										/ sigma bound for rejection [FLOAT]
+WAVE_THRESH		500										/ thereshold for calibration lines selection [FLOAT]
+=========================================================================
