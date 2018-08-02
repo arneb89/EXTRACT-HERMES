@@ -225,7 +225,9 @@ namespace Pipeline
 
             Console.WriteLine("OO = {0}; OX = {1}; Reject = {2}; IterNum = {3}; FluxLimit = {4}",
                 oo, ox, cutLimit, iterNum, fluxLimit);
-            WLCalibration.Calibrate(fluxes, oo, ox, cutLimit, iterNum, fluxLimit, (int)Init.Value("TRIM_STR1"));
+            int x_trim_left = 0;
+            if ((bool)Init.Value("TRIM_ON")) x_trim_left = (int)Init.Value("TRIM_STR1");
+            WLCalibration.Calibrate(fluxes, oo, ox, cutLimit, iterNum, fluxLimit, x_trim_left);
             lambdas = WLCalibration.Lambdas;
             Saver.SaveOrderedDistribution(lambdas, dir_main + "\\lambdas.dat");
 
